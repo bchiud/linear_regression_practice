@@ -1,0 +1,11 @@
+base
+car
+corrplot
+data.table
+dplyr
+ggplot2
+knitr
+lubridate
+psych
+stringr
+tidyr

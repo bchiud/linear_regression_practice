@@ -1,0 +1,78 @@
+---
+title: "Linear Regression Practice"
+author: "Brady Chiu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    css: ./formatting.css
+    code_folding: hide
+    number_sections: true
+    toc: true
+    toc_float: true
+    toc_depth: 4
+  pdf_document:
+    number_sections: true
+    toc: true
+    toc_depth: 4
+---
+
+# TL;DR
+
+```{r message=FALSE, warning=FALSE, cache=FALSE}
+knitr::read_chunk("../code/main.R")
+knitr::opts_chunk$set(fig.height=5, fig.width=8)
+```
+```{r notes, message=FALSE, warning=FALSE, cache=FALSE}
+```
+```{r setup, message=FALSE, warning=FALSE, cache=TRUE}
+```
+```{r functions, message=FALSE, warning=FALSE, cache=TRUE}
+```
+```{r parameters, message=FALSE, warning=FALSE, cache=TRUE}
+```
+
+# Data
+
+* We'll use the __swiss__ data from the __datasets__ package in R
+* We see no significant outliers and fairly normal distributions, confirming our data is good to go
+
+```{r data, message=FALSE, warning=FALSE, cache=TRUE}
+```
+
+# Multicolinearity
+
+* Before we run our model, we'll check our data for multicolinearity
+
+## Correlation Plot
+
+* We see somewhat high correlation between Examination and Education, so we'll need to remove one of them in order to avoid multicolinearity
+
+```{r multicolinearity_corrplot, message=FALSE, warning=FALSE, cache=TRUE}
+```
+
+## Principal Component Analysis
+
+* Our PCA shows that 3 components account for >99% of the variance
+  * Catholic, Agricultre, and Education are the strongest components
+
+```{r multicolinearity_pca, message=FALSE, warning=FALSE, cache=TRUE}
+```
+
+## Variance Inflation Factor
+
+* Our VIF analysis confirms that Examination is the highest inflator of variance and moderately correlated
+
+```{r multicolinearity_vif, message=FALSE, warning=FALSE, cache=TRUE}
+```
+
+# Model
+
+## Model Selection
+
+```{r linear_model, message=FALSE, warning=FALSE, cache=TRUE}
+```
+
+# Results
+
+```{r results, message=FALSE, warning=FALSE, cache=TRUE}
+```
